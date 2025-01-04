@@ -40,10 +40,9 @@ public class nextScene { // Renamed class to follow Java naming conventions
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Parent root = loader.load();
 
-            // Get the current stage and set the new scene
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle(stageTitle); // Set the title of the new stage
+            stage.setTitle(stageTitle);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

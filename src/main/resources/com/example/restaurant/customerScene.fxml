@@ -3,20 +3,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.CustomerScene">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.CustomerController">
     <children>
         <VBox layoutX="20.0" layoutY="20.0" prefWidth="760.0" spacing="15.0">
-            <!-- Title -->
             <Label style="-fx-font-family: 'Arial'; -fx-font-size: 24px;" text="Customer Dashboard" />
-
-            <!-- Search Bar -->
             <TextField fx:id="searchTextField" layoutX="0.0" layoutY="0.0" prefWidth="300.0" promptText="Search Menu" />
-
-            <!-- Menu Item List -->
             <VBox prefHeight="400.0" prefWidth="760.0" spacing="10.0">
 
                 <!-- Pizza -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                <AnchorPane prefHeight="100.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
                     <children>
                         <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Pizza" />
                         <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
@@ -25,11 +20,15 @@
                         <Label fx:id="pizzaAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="15" />
                         <TextField fx:id="pizzaQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
                         <Button fx:id="pizzaAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
+
+                        <!-- Spicy and Extra Cheese Checkboxes -->
+                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="pizzaSpicyCheck" text="Spicy +£2.00" />
+                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="pizzaExtraCheeseCheck" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
                 <!-- Pasta -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                <AnchorPane prefHeight="100.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
                     <children>
                         <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Pasta" />
                         <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
@@ -38,24 +37,32 @@
                         <Label fx:id="pastaAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="10" />
                         <TextField fx:id="pastaQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
                         <Button fx:id="pastaAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
+
+                        <!-- Spicy and Extra Cheese Checkboxes -->
+                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="pastaSpicyCheck" text="Spicy +£2.00" />
+                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="pastaExtraCheeseCheck" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
-                <!-- Juice -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                <!-- Burger -->
+                <AnchorPane prefHeight="100.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
                     <children>
-                        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Juice" />
+                        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Burger" />
                         <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
-                        <Label fx:id="juicePriceLabel" layoutX="200.0" layoutY="10.0" style="-fx-font-size: 16px;" text="£3.50" />
+                        <Label fx:id="burgerPriceLabel" layoutX="200.0" layoutY="10.0" style="-fx-font-size: 16px;" text="£12.50" />
                         <Label layoutX="300.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Available:" />
-                        <Label fx:id="juiceAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="20" />
-                        <TextField fx:id="juiceQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
-                        <Button fx:id="juiceAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
+                        <Label fx:id="burgerAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="20" />
+                        <TextField fx:id="burgerQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
+                        <Button fx:id="burgerAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
+
+                        <!-- Spicy and Extra Cheese Checkboxes -->
+                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="burgerSpicyCheck" text="Spicy +£2.00" />
+                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="burgerExtraCheeseCheck" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
                 <!-- Sushi -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
+                <AnchorPane prefHeight="100.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
                     <children>
                         <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Sushi" />
                         <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
@@ -64,36 +71,14 @@
                         <Label fx:id="sushiAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="12" />
                         <TextField fx:id="sushiQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
                         <Button fx:id="sushiAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
+
+                        <!-- Spicy and Extra Cheese Checkboxes -->
+                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="sushiSpicyCheck" text="Spicy +£2.00" />
+                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="sushiExtraCheeseCheck" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
-
-                <!-- Sandwich -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
-                    <children>
-                        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Sandwich" />
-                        <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
-                        <Label fx:id="sandwichPriceLabel" layoutX="200.0" layoutY="10.0" style="-fx-font-size: 16px;" text="£14.00" />
-                        <Label layoutX="300.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Available:" />
-                        <Label fx:id="sandwichAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="8" />
-                        <TextField fx:id="sandwichQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
-                        <Button fx:id="sandwichAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
-                    </children>
-                </AnchorPane>
-
-                <!-- Burger -->
-                <AnchorPane prefHeight="60.0" prefWidth="760.0" style="-fx-background-color: #f2f2f2; -fx-border-color: #ddd; -fx-border-width: 1px;">
-                    <children>
-                        <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18px;" text="Burger" />
-                        <Label layoutX="150.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Price:" />
-                        <Label fx:id="burgerPriceLabel" layoutX="200.0" layoutY="10.0" style="-fx-font-size: 16px;" text="£6.50" />
-                        <Label layoutX="300.0" layoutY="10.0" style="-fx-font-size: 16px;" text="Available:" />
-                        <Label fx:id="burgerAvailableLabel" layoutX="370.0" layoutY="10.0" style="-fx-font-size: 16px;" text="10" />
-                        <TextField fx:id="burgerQuantityField" layoutX="500.0" layoutY="10.0" prefWidth="100.0" promptText="Quantity" />
-                        <Button fx:id="burgerAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
-                    </children>
-                </AnchorPane>
-
             </VBox>
+
 
             <!-- Total Cost Section -->
             <HBox layoutX="20.0" layoutY="500.0" spacing="20.0">
@@ -102,11 +87,11 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="509.0" spacing="20.0">
                 <children>
-                    <Button fx:id="placeOrderButton" onAction="#placeOrder" prefWidth="120.0" style="-fx-background-color: #948c7a; -fx-text-fill: white;" text="Place Order" />
+                    <Button fx:id="placeOrderButton" prefWidth="120.0" style="-fx-background-color: #948c7a; -fx-text-fill: white;" text="Place Order" />
                     <Button fx:id="resetButton" layoutX="10.0" layoutY="10.0" prefWidth="120.0" style="-fx-background-color: #612A22; -fx-text-fill: white;" text="Reset" />
                 </children>
             </HBox>
-
         </VBox>
+
     </children>
 </AnchorPane>
