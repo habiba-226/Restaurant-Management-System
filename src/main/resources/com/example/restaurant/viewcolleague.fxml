@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.ViewColleagueRoleController">
+   <AnchorPane prefHeight="400.0" prefWidth="381.0" style="-fx-background-color: #B9AB99">
+      <children>
+         <Label fx:id="colleagueNameLabel" layoutX="15.0" layoutY="274.0" prefHeight="50.0" prefWidth="373.0" text="Colleague's Name">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+          <Label fx:id="colleagueRoleLabel" layoutX="15.0" layoutY="324.0" prefHeight="50.0" prefWidth="373.0" text="Colleague's Role">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+          <Button fx:id="backButton" layoutX="362.0" layoutY="2.0" onAction="#onBackButtonClick" style="-fx-background-color: #d9534f;" text="Back" />
+          <ImageView fx:id="colleagueImageView" fitHeight="234.0" fitWidth="242.0" layoutX="70.0" layoutY="27.0" />
+      </children>
+   </AnchorPane>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="384.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.Menu">
+    <children>
+        <ListView fx:id="menuListView" layoutX="10.0" layoutY="14.0" prefHeight="200" prefWidth="300" />
+        <Label layoutX="20" layoutY="240" text="Item Name:" />
+        <TextField fx:id="itemNameField" layoutX="100" layoutY="240" prefWidth="150" />
+        <Label layoutX="20" layoutY="280" text="Price:" />
+        <TextField fx:id="itemPriceField" layoutX="100" layoutY="280" prefWidth="150" />
+        <Button layoutX="49.0" layoutY="316.0" onAction="#onAddItem" text="Add Item" />
+        <Button layoutX="207.0" layoutY="316.0" onAction="#onRemoveItem" text="Remove Item" />
+      <Button layoutX="140.0" layoutY="358.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+    </children>
+</AnchorPane>

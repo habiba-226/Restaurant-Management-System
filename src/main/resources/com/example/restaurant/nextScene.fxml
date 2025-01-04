@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.nextScene">
+   <children>
+      <AnchorPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B9AB99">
+               <children>
+                  <Button fx:id="goback2" layoutX="256.0" layoutY="303.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Go back">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <style>
+            -fx-background-color: #612A22;
+            -fx-text-fill: #B9AB99;
+         </style>
+                  </Button>
+                  <Button layoutX="402.0" layoutY="217.0" mnemonicParsing="false" onAction="#goToCustomerScene" style="-fx-background-color: #948C7A" text="Customer">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="93.0" layoutY="217.0" mnemonicParsing="false" onAction="#goToEmployeeScene" style="-fx-background-color: #948C7A" text="Employee">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="93.0" layoutY="100.0" text="Are you an Employee or a Customer?">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <style>
+            -fx-text-fill: #612A22;
+         </style>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="558.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.WelcomeEmployeeController">
+   <children>
+      <AnchorPane prefHeight="575.0" prefWidth="600.0" style="-fx-background-color: #B9AB99">
+         <children>
+            <Button fx:id="backkbutton" layoutX="556.0" layoutY="2.0" mnemonicParsing="false" onAction="#onBackButtonClick" style="-fx-background-color: #d9534f;" text="BACK" />
+            <Button fx:id="viewRoleButton" layoutX="407.0" layoutY="353.0" mnemonicParsing="false" onAction="#viewColleagueRole" text="choose" />
+             <Label fx:id="employeeRoleLabel" layoutX="21.0" layoutY="72.0" prefHeight="32.0" prefWidth="172.0" text="Employee Role">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+             <Label fx:id="employeeNameLabel" layoutX="21.0" layoutY="40.0" prefHeight="32.0" prefWidth="172.0" text="Employee Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="employeeListView" layoutX="312.0" layoutY="140.0" prefHeight="200.0" prefWidth="244.0" style="-fx-background-color: #302620;" />
+             <Button fx:id="dashbutton" layoutX="78.0" layoutY="128.0" onAction="#DashBoardButtonClick" style="-fx-background-color: #948C7A; -fx-padding: 10;" text="Dashboard" />
+             <Button fx:id="GoMenu" layoutX="91.0" layoutY="175.0" onAction="#ChangeMenu" style="-fx-background-color: #948C7A; -fx-padding: 10;" text="Menu" />
+             <Button layoutX="91.0" layoutY="221.0" style="-fx-background-color: #948C7A; -fx-padding: 10;" text="Order" />
+             <Button layoutX="78.0" layoutY="269.0" style="-fx-background-color: #948C7A; -fx-padding: 10;" text="Customers" />
+             <Button layoutX="83.0" layoutY="316.0" style="-fx-background-color: #d9534f; -fx-text-fill: white; -fx-padding: 10;" text="Sign Out" />
+            <Label layoutX="356.0" layoutY="91.0" prefHeight="37.0" prefWidth="172.0" text="Check Colleagues Roles" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

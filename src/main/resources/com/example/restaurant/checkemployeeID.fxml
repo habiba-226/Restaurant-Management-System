@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurant.checkEmployeeId">
+   <children>
+      <Button fx:id="enterButton" layoutX="160.0" layoutY="244.0" mnemonicParsing="false" onAction="#checksemployeeid" text="Enter" />
+      <Label layoutX="88.0" layoutY="131.0" text="Enter Your Employee ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="employeeIdField" layoutX="107.0" layoutY="188.0" onAction="#checksemployeeid" promptText="Employee ID" />
+      <Button fx:id="goback3" layoutX="526.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Go back" />
+   </children>
+</AnchorPane>
