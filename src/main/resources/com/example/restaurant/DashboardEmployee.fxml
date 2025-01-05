@@ -9,14 +9,16 @@
 
     <AnchorPane id="topPane" prefHeight="118.0" prefWidth="649.0" style="-fx-background-color: #800000; -fx-padding: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="CENTER" layoutX="152.0" layoutY="19.0" prefHeight="80.0" prefWidth="92.0" style="-fx-background-color: #a52a2a; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: white;">
-            <Label style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" text="0" />
+            <!-- Updated fx:id for customersLabel -->
+            <Label fx:id="customersLabel" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" text="0" />
             <Label style="-fx-text-fill: white;" text="Customers" />
         </VBox>
-        <VBox alignment="CENTER" layoutX="377.0" layoutY="19.0" prefHeight="80.0" prefWidth="92.0" style="-fx-background-color: #a52a2a; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: white;">
-            <Label style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" text="£0.0" />
+        <VBox alignment="CENTER" layoutX="401.0" layoutY="19.0" prefHeight="80.0" prefWidth="92.0" style="-fx-background-color: #a52a2a; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: white;">
+            <!-- Updated fx:id for incomeLabel -->
+            <Label fx:id="incomeLabel" style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;" text="£0.0" />
             <Label style="-fx-text-fill: white;" text="Income" />
         </VBox>
-      <Button fx:id="goback" layoutX="594.0" layoutY="6.0" mnemonicParsing="false" onAction="#back" text="back" />
+        <Button fx:id="goback" layoutX="594.0" layoutY="6.0" mnemonicParsing="false" onAction="#back" text="back" />
     </AnchorPane>
 
     <!-- Center Content -->
@@ -27,26 +29,29 @@
         <HBox spacing="10">
             <VBox />
         </HBox>
-      <BarChart fx:id="numberOfOrdersChart1" layoutX="112.0" layoutY="315.0" prefHeight="200" prefWidth="400" style="-fx-border-color: lightgray; -fx-border-width: 1;" title="Income">
-         <xAxis>
-            <CategoryAxis label="Days" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis label="Profit" />
-         </yAxis>
-      </BarChart>
-          <Label layoutX="300.0" layoutY="282.0" style="-fx-font-size: 14;" text="Income" />
-          <Label layoutX="255.0" layoutY="24.0" style="-fx-font-size: 14;" text="Number of Orders">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
-          <BarChart fx:id="numberOfOrdersChart" layoutX="100.0" layoutY="62.0" prefHeight="200" prefWidth="400" style="-fx-border-color: lightgray; -fx-border-width: 1;" title="Number of Orders">
-              <xAxis>
-                  <CategoryAxis label="Days" />
-              </xAxis>
-              <yAxis>
-                  <NumberAxis label="Orders" />
-              </yAxis>
-              </BarChart>
+        <!-- Income BarChart -->
+        <BarChart fx:id="numberOfOrdersChart1" layoutX="115.0" layoutY="315.0" prefHeight="200" prefWidth="416.0" style="-fx-border-color: lightgray; -fx-border-width: 1;" title="Income">
+            <xAxis>
+                <CategoryAxis label="Days" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Profit" />
+            </yAxis>
+        </BarChart>
+        <Label layoutX="300.0" layoutY="282.0" style="-fx-font-size: 14;" text="Income" />
+        <Label layoutX="255.0" layoutY="24.0" style="-fx-font-size: 14;" text="Number of Orders">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <!-- Number of Orders BarChart -->
+        <BarChart fx:id="numberOfOrdersChart" layoutX="115.0" layoutY="68.0" prefHeight="200" prefWidth="416.0" style="-fx-border-color: lightgray; -fx-border-width: 1;" title="Number of Orders">
+            <xAxis>
+                <CategoryAxis label="Days" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Orders" />
+            </yAxis>
+        </BarChart>
     </AnchorPane>
 </AnchorPane>

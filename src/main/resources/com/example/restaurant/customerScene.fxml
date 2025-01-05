@@ -22,8 +22,8 @@
                         <Button fx:id="pizzaAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
 
                         <!-- Spicy and Extra Cheese Checkboxes -->
-                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="pizzaSpicyCheck" text="Spicy +£2.00" />
-                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="pizzaExtraCheeseCheck" text="Extra Cheese +£5.00" />
+                        <CheckBox fx:id="pizzaSpicyCheck" layoutX="500.0" layoutY="45.0" text="Spicy +£2.00" />
+                        <CheckBox fx:id="pizzaExtraCheeseCheck" layoutX="600.0" layoutY="45.0" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
@@ -39,8 +39,8 @@
                         <Button fx:id="pastaAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
 
                         <!-- Spicy and Extra Cheese Checkboxes -->
-                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="pastaSpicyCheck" text="Spicy +£2.00" />
-                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="pastaExtraCheeseCheck" text="Extra Cheese +£5.00" />
+                        <CheckBox fx:id="pastaSpicyCheck" layoutX="500.0" layoutY="45.0" text="Spicy +£2.00" />
+                        <CheckBox fx:id="pastaExtraCheeseCheck" layoutX="600.0" layoutY="45.0" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
@@ -56,8 +56,8 @@
                         <Button fx:id="burgerAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
 
                         <!-- Spicy and Extra Cheese Checkboxes -->
-                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="burgerSpicyCheck" text="Spicy +£2.00" />
-                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="burgerExtraCheeseCheck" text="Extra Cheese +£5.00" />
+                        <CheckBox fx:id="burgerSpicyCheck" layoutX="500.0" layoutY="45.0" text="Spicy +£2.00" />
+                        <CheckBox fx:id="burgerExtraCheeseCheck" layoutX="600.0" layoutY="45.0" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
 
@@ -73,8 +73,8 @@
                         <Button fx:id="sushiAddButton" layoutX="620.0" layoutY="10.0" prefWidth="100.0" style="-fx-background-color: #775f4e; -fx-text-fill: white;" text="Add" />
 
                         <!-- Spicy and Extra Cheese Checkboxes -->
-                        <CheckBox layoutX="500.0" layoutY="45.0" fx:id="sushiSpicyCheck" text="Spicy +£2.00" />
-                        <CheckBox layoutX="600.0" layoutY="45.0" fx:id="sushiExtraCheeseCheck" text="Extra Cheese +£5.00" />
+                        <CheckBox fx:id="sushiSpicyCheck" layoutX="500.0" layoutY="45.0" text="Spicy +£2.00" />
+                        <CheckBox fx:id="sushiExtraCheeseCheck" layoutX="600.0" layoutY="45.0" text="Extra Cheese +£5.00" />
                     </children>
                 </AnchorPane>
             </VBox>
@@ -92,6 +92,7 @@
                 </children>
             </HBox>
         </VBox>
+      <Button fx:id="backButton" layoutX="738.0" layoutY="9.0" prefHeight="17.0" prefWidth="53.0" style="-fx-background-color: #775f5e; -fx-text-fill: white;" text="Back" />
 
     </children>
 </AnchorPane>

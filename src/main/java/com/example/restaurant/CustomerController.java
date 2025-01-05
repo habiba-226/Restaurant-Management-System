@@ -1,6 +1,8 @@
 package com.example.restaurant;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -53,7 +55,10 @@ public class CustomerController {
 
         @FXML
         private Button resetButton;
-        // Total Cost
+
+        @FXML
+        private Button backButton;
+
         @FXML
         private Label totalCostLabel;
 
@@ -93,6 +98,7 @@ public class CustomerController {
             burgerAddButton.setOnAction(event -> handleAddItem("Burger", burgerPriceLabel, burgerAvailableLabel, burgerQuantityField, burgerSpicyCheck, burgerExtraCheeseCheck));
             placeOrderButton.setOnAction(event -> placeOrder());
             resetButton.setOnAction(e -> resetFields());
+            backButton.setOnAction(e -> back(e));
         }
 
         public double getTotalCost() {
@@ -154,6 +160,8 @@ public class CustomerController {
 
                 orderDetails.append(String.format("%d x %s @ £%.2f (added £%.2f each)\n", quantity, itemName, finalPricePerItem,totalAdditionalPrice));
 
+                GlobalService.addToTotalIncome(totalCost);
+                GlobalService.incrementTotalOrders(quantity);
             } catch (NumberFormatException e) {
                 showAlert("Invalid Input", "Please enter a valid quantity.");
             }
@@ -191,15 +199,12 @@ public class CustomerController {
             Receipt receipt = new Receipt(receiptId, orderDetails.toString(), getTotalCost());
 
             try {
-                // Load the receipt FXML
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Receipt.fxml"));
                 Parent root = loader.load();
 
-                // Get the controller and initialize it
                 ReceiptController controller = loader.getController();
                 controller.initialize(receiptId, orderDetails.toString(), getTotalCost());
 
-                // Create a new scene and show the receipt
                 Scene receiptScene = new Scene(root);
                 Stage receiptStage = new Stage();
                 receiptStage.setScene(receiptScene);
@@ -210,12 +215,33 @@ public class CustomerController {
             }
         }
 
-        private void showAlert(String title, String message) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle(title);
-            alert.setContentText(message);
-            alert.showAndWait();
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void back(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("nextScene.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error", "Failed to load the previous scene.");
         }
     }
+}
 
 
