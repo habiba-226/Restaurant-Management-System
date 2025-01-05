@@ -56,10 +56,8 @@ public class Menu implements MenuOperations {
             double price = Double.parseDouble(priceText);
             addMenuItem(itemName, price);
 
-            // Add item to the database
             addItemToDatabase(itemName, price);
 
-            // Clear fields after successful addition
             itemNameField.clear();
             itemPriceField.clear();
         } catch (NumberFormatException e) {
@@ -89,13 +87,8 @@ public class Menu implements MenuOperations {
         }
 
         try {
-            // Remove the item from the internal list and ListView
             removeMenuItem(itemName);
-
-            // Remove the item from the database
             removeItemFromDatabase(itemName);
-
-            // Clear the input field
             itemNameField.clear();
 
         } catch (SQLException e) {
