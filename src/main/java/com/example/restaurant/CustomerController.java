@@ -10,6 +10,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class CustomerController {
 
@@ -189,31 +191,49 @@ public class CustomerController {
             totalCostLabel.setText("0.00");
         }
 
-        private void placeOrder() {
-            if (orderDetails.length() == 0) {
-                showAlert("No Items", "You must add at least one item to place an order.");
-                return;
-            }
-
-            String receiptId = "R" + System.currentTimeMillis();
-            Receipt receipt = new Receipt(receiptId, orderDetails.toString(), getTotalCost());
-
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Receipt.fxml"));
-                Parent root = loader.load();
-
-                ReceiptController controller = loader.getController();
-                controller.initialize(receiptId, orderDetails.toString(), getTotalCost());
-
-                Scene receiptScene = new Scene(root);
-                Stage receiptStage = new Stage();
-                receiptStage.setScene(receiptScene);
-                receiptStage.setTitle("Order Receipt");
-                receiptStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    private void placeOrder() {
+        if (orderDetails.length() == 0) {
+            showAlert("No Items", "You must add at least one item to place an order.");
+            return;
         }
+
+        String receiptId = "R" + System.currentTimeMillis();
+        double totalCost = getTotalCost();
+
+        try (Connection connection = database.connectDb()) {
+            String insertQuery = "INSERT INTO receipt (receipt_id, total_price) VALUES (?, ?)";
+            try (PreparedStatement preparedStatement = ((java.sql.Connection) connection).prepareStatement(insertQuery)) {
+                preparedStatement.setString(1, receiptId);
+                preparedStatement.setDouble(2, totalCost);
+                preparedStatement.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to save the receipt in the database.");
+            return;
+        }
+
+        Receipt receipt = new Receipt(receiptId, orderDetails.toString(), totalCost);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Receipt.fxml"));
+            Parent root = loader.load();
+
+            ReceiptController controller = loader.getController();
+            controller.initialize(receiptId, orderDetails.toString(), totalCost);
+
+            Scene receiptScene = new Scene(root);
+            Stage receiptStage = new Stage();
+            receiptStage.setScene(receiptScene);
+            receiptStage.setTitle("Order Receipt");
+            receiptStage.show();
+            resetFields();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error", "Failed to load the receipt screen.");
+        }
+    }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
