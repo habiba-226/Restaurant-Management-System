@@ -56,34 +56,15 @@ A JavaFX-based application for managing restaurant operations, featuring employe
 
 ---
 
-### Inheritance & Interfaces  
-- **Inheritance**:  
-  - `MenuItem` (abstract) serves as the base class. Subclasses like `Pizza` and `Burger` define specific prices and behaviors.  
-
-- **Interfaces**:  
-  - `MenuOperations` defines operations implemented by the `Menu` class.  
-
----
-
 ## Technical Highlights  
 
 ### Database Integration  
 - **Database**: MySQL database (`restaurant_db`) managed via XAMPP.  
 - **Tables**:  
-  - `name` (credentials).  
-  - `Employee` (IDs and roles).  
-
----
-
-### Exception Handling  
-Ensures robust error alerts throughout the application.  
-
----
-
-### Advanced Java Concepts  
-- **Method Overloading**: Used in `Alert` methods.  
-- **Method Overriding**: Implemented in `Menu` for `MenuOperations`.  
-
+  - `Name` (credentials).  
+  - `Employee` (IDs and roles).
+  - `Receipt` (IDs and price).
+    
 ---
 
 ## Requirements  
